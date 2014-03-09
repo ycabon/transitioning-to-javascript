@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Get Started</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="bootstrap_v3/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css"> 
+    <link rel="stylesheet" type="text/css" href="css/bootstrapmap.css">
+    
+    <!-- API -->
+    <link rel="stylesheet" type="text/css" href="http://js.arcgis.com/3.9/js/esri/css/esri.css">
+    <script src="http://js.arcgis.com/3.9/"></script>
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="bootstrap_v3/docs-assets/js/html5shiv.js"></script>
+      <script src="bootstrap_v3/docs-assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img class="navbar-brand-image" src="">My first app</a>
+        </div>
+        
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+          
+            <!--
+              1. Move this in the BasemapList dijit 
+            -->
+            <li id="basemapsList"></li>
+          
+            <li class="navbar-form" role="search">
+              <div id="geocoder"></div>
+            </li>
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+    
+    <div id="mapDiv"></div>
+    
+    <!--
+      1. Create a new module called BasemapList.
+      2. Require the new module.
+    -->
+    <script>
+        require([
+          "esri/map",
+          
+          "esri/dijit/Geocoder",
+          "js/dijit/BasemapsList.js",
+          
+          "js/bootstrapmap.js",
+          "dojo/domReady!"
+        ], function(
+          Map,
+          Geocoder, BasemapsList,
+          BootstrapMap
+        ) {
+          var map = BootstrapMap.create("mapDiv", {
+            basemap: "national-geographic",
+            center:  [-122.45,37.77],
+            zoom:    12
+          });
+          
+          var geocoder = new Geocoder({
+            map: map
+          }, "geocoder");
+          
+          var basemapList = new BasemapsList({
+            map: map
+          }, "basemapsList");
+          
+        });
+    </script>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
