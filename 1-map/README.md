@@ -1,19 +1,20 @@
-# Create a simple map application.
+### Create a simple map application.
 
-## Steps:
+##### Steps:
 
-1. Add the ArcGIS JS API
+- Add the ArcGIS JS API
 ```html
 <link rel="stylesheet" type="text/css" href="http://js.arcgis.com/3.9/js/esri/css/esri.css">
 <script src="http://js.arcgis.com/3.9/"></script>
+```
     
-2. Add the map's container
+- Add the map's container
 ```html
 <div id="mapDiv"></div>
 ```
 
-3. Instanciate the map
-```javascript
+- Instanciate the map
+```html
 <script>
     require([
       "esri/map",
