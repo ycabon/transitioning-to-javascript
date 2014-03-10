@@ -17,6 +17,9 @@
 ```html
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
   <ul class="nav navbar-nav navbar-right">
+    <!--
+      2. Add a container for the geocoder
+    -->
     <li class="navbar-form" role="search">
       <div id="geocoder"></div>
     </li> 
