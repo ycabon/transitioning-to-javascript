@@ -41,7 +41,7 @@ var BasemapsList = declare([_WidgetBase, _TemplatedMixin], {
                  +'    <li><a href="#">Topographic</a></li>'
                  +'    <li><a href="#">Gray</a></li>'
                  +'    <li class="divider"></li>'
-                 +'    <li><a href="#">Open Street Map</a></li>'
+                 +'    <li><a href="#">OpenStreetMap</a></li>'
                  +'  </ul>'
                  +'</li>',
                  
@@ -88,7 +88,7 @@ var BasemapsList = declare([_WidgetBase, _TemplatedMixin], {
         case "Gray":
           map.setBasemap("gray");
           break;
-        case "Open Street Map":
+        case "OpenStreetMap":
           map.setBasemap("osm");
           break;
       }

@@ -48,7 +48,7 @@
                 <li><a href="#">Topographic</a></li>
                 <li><a href="#">Gray</a></li>
                 <li class="divider"></li>
-                <li><a href="#">Open Street Map</a></li>
+                <li><a href="#">OpenStreetMap</a></li>
               </ul>
             </li>
           
@@ -83,8 +83,8 @@
           BootstrapMap
         ) {
           var map = BootstrapMap.create("mapDiv", {
-            basemap: "national-geographic",
-            center:  [-122.45,37.77],
+            basemap: "topo",
+            center:  [-116.51,33.82],
             zoom:    12
           });
           
@@ -112,7 +112,7 @@
               case "Gray":
                 map.setBasemap("gray");
                 break;
-              case "Open Street Map":
+              case "OpenStreetMap":
                 map.setBasemap("osm");
                 break;
             }
