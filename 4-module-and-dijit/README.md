@@ -1,4 +1,4 @@
-### Add a basemap list.
+### Convert the list to a Dijit.
 
 ##### Steps:
 
