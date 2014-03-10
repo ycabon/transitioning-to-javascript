@@ -1,0 +1,22 @@
+<polymer-element name="esri-map" attributes="basemap">
+  <template>
+    <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/esri/css/esri.css">
+    <div id="mapDiv" style="width: 100%; height: 100%;"></div>
+  </template>
+  <script>
+    Polymer('esri-map', {
+      basemap: "",
+      ready: function() {
+        var self = this;
+        require(["esri/map"], function(Map) {
+          self.map = new Map(self.$.mapDiv, {
+            basemap: self.basemap
+          });
+        });
+      },
+      attributeChanged: function(attrName, oldVal, newVal) {
+        console.log(attrName, 'old: ' + oldVal, 'new:', newVal);
+      }
+    });
+  </script>
+</polymer-element>

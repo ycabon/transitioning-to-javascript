@@ -1,0 +1,23 @@
+<polymer-element name="esri-webmap" attributes="webmapId">
+  <template>
+    <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/esri/css/esri.css">
+    <div id="mapDiv" style="width: 100%; height: 100%;"></div>
+  </template>
+  <script>
+    Polymer('esri-webmap', {
+      webmapId: "",
+      ready: function() {
+        var self = this
+        require([
+          "esri/arcgis/utils"
+        ], function(
+          arcgisUtils
+        ) {
+          arcgisUtils.createMap(self.webmapId, self.$.mapDiv).then(function(response) {
+            self.map = response.map;
+          });
+        });
+      }
+    });
+  </script>
+</polymer-element>
