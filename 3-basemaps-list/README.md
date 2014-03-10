@@ -1,4 +1,4 @@
-### Add basemaps list.
+### Add a basemap list.
 
 ##### Steps:
 
