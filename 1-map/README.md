@@ -24,8 +24,8 @@
       Map, BootstrapMap
     ) {
       var map = BootstrapMap.create("mapDiv", {
-        basemap: "national-geographic",
-        center:  [-122.45,37.77],
+        basemap: "topo",
+        center:  [-116.51,33.82],
         zoom:    12
       });
     });
