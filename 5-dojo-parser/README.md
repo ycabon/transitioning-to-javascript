@@ -1,4 +1,4 @@
-### Convert the list to a Dijit.
+### Use Dojo Parser
 
 ##### Steps:
 
